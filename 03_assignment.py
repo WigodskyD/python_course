@@ -260,8 +260,10 @@ def exercise03():
     '''
 
     # ------ Place code below here \/ \/ \/ ------
-    csv_read_in = avocado.csv
-    print(csv_read_in)
+    with open('avocado.csv', newline='') as csv_file:
+        csv_parsed = csv.reader(csv_file)
+        for row in csv_parsed:
+            print(row)
     # ------ Place code above here /\ /\ /\ ------
 
 
