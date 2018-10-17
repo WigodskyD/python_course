@@ -8,7 +8,6 @@ import uuid
 
 
 class PandasChain:
-    # 5 pts - Complete this constructor
     def __init__(self, name):
         self.__name = name.upper()
         self.__chain = []
@@ -55,7 +54,6 @@ class PandasChain:
     def get_number_of_blocks(self):
         return len(self.__chain) + 1
 
-    # 10 pts - Returns all of the values (Pandas coins transferred) of all transactions from every block as a single list
     def get_values(self):
         value_return = []
         for bloc in self.__chain:
@@ -95,7 +93,6 @@ class Block:
         new_transaction = [ts, s, r, v, tx_hash, ts_nice]
         self.__transactions.loc[len(self.__transactions)] = new_transaction
     def display_transactions(self):
-        #print(self.__transactions[['Sender', 'Value','Receiver', 'Transaction_time']])
         display = self.__transactions.to_string(index=False,columns=['Sender', 'Value','Receiver', 'Transaction_time'])
         print(display)
     def get_size(self):
@@ -118,7 +115,6 @@ class Block:
         tuples = [tuple(a) for a in values_set.values]
         return tuples
 
-        # SEE PROF COMMENTS  RETURN TUPLE WITH TXN TIMESTAMP/VALUE PAIR
 class TestAssignment4(unittest.TestCase):
     def test_chain(self):
         block = Block(1,"test")
@@ -157,67 +153,3 @@ class TestAssignment4(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-
-
-
-fakem= PandasChain('FakeMoney')
-print(fakem.get_number_of_blocks())
-fakem.add_transaction('FrAnK','oLiVeR','22.1')
-fakem.add_transaction('FrAnK','oLiVeR','22.1')
-fakem.add_transaction('FrAnK','oLiVeR','22.1')
-fakem.add_transaction('FrAnK','oLiVeR','22.1')
-fakem.add_transaction('FrAnK','oLiVeR','22.1')
-fakem.add_transaction('FrAnK','oLiVeR','22.1')
-fakem.add_transaction('FrAnK','oLiVeR','22.1')
-fakem.add_transaction('FrAnK','oLiVeR','22.1')
-fakem.add_transaction('FrAnK','oLiVeR','22.1')
-fakem.add_transaction('FrAnK','oLiVeR','22.1')
-fakem.add_transaction('FrAnK','oLiVeR','44.1')
-fakem.add_transaction('FrAnK','oLiVeR','44.1')
-fakem.add_transaction('FrAnK','oLiVeR','44.1')
-fakem.add_transaction('FrAnK','oLiVeR','44.1')
-fakem.add_transaction('FrAnK','oLiVeR','44.1')
-fakem.add_transaction('FrAnK','oLiVeR','22.1')
-fakem.add_transaction('FrAnK','oLiVeR','22.1')
-fakem.add_transaction('FrAnK','oLiVeR','22.1')
-fakem.add_transaction('FrAnK','oLiVeR','22.1')
-fakem.add_transaction('FrAnK','oLiVeR','22.1')
-fakem.add_transaction('FrAnK','oLiVeR','22.1')
-fakem.add_transaction('FrAnK','oLiVeR','22.1')
-fakem.add_transaction('FrAnK','oLiVeR','22.1')
-fakem.add_transaction('FrAnK','oLiVeR','22.1')
-fakem.add_transaction('FrAnK','oLiVeR','22.1')
-fakem.add_transaction('FrAnK','oLiVeR','22.1')
-fakem.add_transaction('FrAnK','oLiVeR','22.1')
-fakem.add_transaction('FrAnK','oLiVeR','22.1')
-fakem.add_transaction('FrAnK','oLiVeR','22.1')
-fakem.add_transaction('FrAnK','oLiVeR','22.1')
-fakem.add_transaction('FrAnK','oLiVeR','22.1')
-fakem.add_transaction('FrAnK','oLiVeR','22.1')
-fakem.add_transaction('FrAnK','oLiVeR','22.1')
-fakem.add_transaction('FrAnK','oLiVeR','22.1')
-fakem.add_transaction('FrAnK','oLiVeR','22.1')
-fakem.add_transaction('FrAnK','oLiVeR','22.1')
-fakem.add_transaction('FrAnK','oLiVeR','22.1')
-fakem.add_transaction('FrAnK','oLiVeR','22.1')
-fakem.add_transaction('FrAnK','oLiVeR','22.1')
-fakem.add_transaction('FrAnK','oLiVeR','66.1')
-fakem.add_transaction('FrAnK','oLiVeR','22.1')
-fakem.add_transaction('FrAnK','oLiVeR','22.1')
-fakem.add_transaction('FrAnK','oLiVeR','22.1')
-fakem.add_transaction('FrAnK','oLiVeR','22.1')
-print('showing chain')
-
-
-#fakem.display_block_headers()
-g = None
-g = '  '
-print ('def'+ g + 'abc')
-h = [[1,'a'],[2,'b'],[3,'c'],[4,'d']]
-print(h[-1])
-
-fakem.display_block_headers()
-fakem.display_chain()
-print(fakem.get_number_of_blocks())
-print('dddddddddddddddddddddddddddddddddd')
-print(fakem.get_values())
