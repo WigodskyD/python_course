@@ -1,13 +1,3 @@
-#from flask import Flask
-#app = Flask(__name__)
-
-#@app.route('/')
-#def hello_world():
-#    return '<h1>Hello World!</h1>'
-
-#from flask import request as req
-#print(dir(req))
-
 '''
 Assignment #5
 1. Add / modify code ONLY between the marked areas (i.e. "Place code below")
