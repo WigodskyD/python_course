@@ -1,3 +1,13 @@
+#from flask import Flask
+#app = Flask(__name__)
+
+#@app.route('/')
+#def hello_world():
+#    return '<h1>Hello World!</h1>'
+
+#from flask import request as req
+#print(dir(req))
+
 '''
 Assignment #5
 1. Add / modify code ONLY between the marked areas (i.e. "Place code below")
@@ -36,7 +46,7 @@ main_page = '''
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Number</label>  
   <div class="col-md-4">
-  <input name='textinput' type="number" placeholder="Enter a number" class="form-control input-md" >
+  <input name="textinput" type="number" placeholder="Enter a number" class="form-control input-md">
   </div>
 </div>
 <!-- Button -->
@@ -55,16 +65,29 @@ main_page = '''
 # ------ Place code below here \/ \/ \/ ------
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/', methods=['GET','POST'])
 def main_show():
     return (main_page)
 main_show()
 
-@app.route('/calc', methods=['GET','POST'])
+@app.route('/calc', methods=['POST'])
 def calc():
-    number_output= request.form['textinput']
-    return (number_output)
-calc()
+   number_output= str(int(request.form['textinput'])* 5)
+   leading_string= '<html><body style="background-color:aliceblue"><br><br><br><br><br><h1><indent style= "margin-left: 420px; color:#913022">'
+   calculate_page = leading_string + number_output + '''
+      </h1></indent>
+      <form class="form-horizontal" method="post" action="/">
+          <!-- Button -->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="singlebutton"></label>
+            <div class="col-md-4">
+              <button id="singlebutton" name="singlebutton" class="btn btn-primary" 
+              style= "margin-left: 420px; margin-top: 15px; background:#d32c34; color:white; width:90px; height:45px">Return to main page</button>
+            </div>
+          </div>
+      </form>
+    </html>'''
+   return (calculate_page)
 
 
 # ------ Place code above here /\ /\ /\ ------
