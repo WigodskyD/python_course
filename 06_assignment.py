@@ -145,16 +145,17 @@ def exercise09():
     df = pd.DataFrame.from_dict(df, orient='index')
     df.reset_index(level=0, inplace=True)
     df.columns = ('Date', 'Bitcoin_Price') #The code is more than necessary, but it produces a nicer-looking dataframe.
-    '''
+
     dates = list(df['Date'])
     bitcoin_price = list(df['Bitcoin_Price'])
     trace = go.Scatter(x=dates, y=bitcoin_price, line=dict(shape='linear'))
     data = [trace]
     py.plot(data, filename='bitcoin_price_series')
-    '''
+
     print(df.head(5))
     print(df.tail(5))
     plotly_url = 'https://plot.ly/~DanWig/40/#/'
+
     # ------ Place code above here /\ /\ /\ ------
     return df, plotly_url
 
