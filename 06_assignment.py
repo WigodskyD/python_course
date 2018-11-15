@@ -18,7 +18,10 @@ import requests
 
 # ------ Place code below here \/ \/ \/ ------
 # import plotly library and enter credential info here
-
+import plotly
+# plotly.tools.set_credentials_file(username='DanWig', api_key='already_set')
+import plotly.plotly as py
+import plotly.graph_objs as go
 
 # ------ Place code above here /\ /\ /\ ------
 
@@ -145,10 +148,6 @@ def exercise09():
     '''
     dates = list(df['Date'])
     bitcoin_price = list(df['Bitcoin_Price'])
-    import plotly
-    # plotly.tools.set_credentials_file(username='DanWig', api_key='already_set')
-    import plotly.plotly as py
-    import plotly.graph_objs as go
     trace = go.Scatter(x=dates, y=bitcoin_price, line=dict(shape='linear'))
     data = [trace]
     py.plot(data, filename='bitcoin_price_series')
