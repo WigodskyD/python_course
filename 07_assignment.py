@@ -302,6 +302,7 @@ def exercise07():
 
     return reg_model, prediction_space
 
+
 class TestAssignment7(unittest.TestCase):
     def test_exercise07(self):
         rm, ps = exercise07()
