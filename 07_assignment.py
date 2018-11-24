@@ -302,7 +302,6 @@ def exercise07():
 
     return reg_model, prediction_space
 
-
 class TestAssignment7(unittest.TestCase):
     def test_exercise07(self):
         rm, ps = exercise07()
@@ -321,7 +320,6 @@ class TestAssignment7(unittest.TestCase):
 
     def test_exercise04(self):
         print('Skipping EX4 tests')
-        exercise04()
 
     def test_exercise03(self):
         score = exercise03(8, .25)
