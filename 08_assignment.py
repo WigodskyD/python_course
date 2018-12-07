@@ -1,16 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Spyder Editor
-
-This is a temporary script file.
-"""
-"""
-print(mc.__version__) 
-
-connection = mc.connect(user='root', password='Input_Your_Local_SQL_Password',
-host='127.0.0.1', database='sys',
-auth_plugin='mysql_native_password')
-"""
 
 import mysql.connector as mc
 import pandas as pd
